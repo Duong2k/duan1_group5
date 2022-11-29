@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Khách hàng</title>
+	<title>Khách Hàng</title>
 	<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
@@ -14,36 +14,36 @@
 	  <div class="collapse navbar-collapse" id="navbarNav">
 	    <ul class="navbar-nav">
 	      <li class="nav-item active">
-	        <a class="nav-link" href="xulydonhang.php">Đơn hàng <span class="sr-only">(current)</span></a>
+	        <a class="nav-link" href="xulydonhang.php">Đơn hàng</a>
 	      </li>
-	      <li class="nav-item">
+	      <li class="nav-item active">
 	        <a class="nav-link" href="xulydanhmuc.php">Danh mục</a>
 	      </li>
-	      <li class="nav-item">
+	      <li class="nav-item active">
 	        <a class="nav-link" href="xulysanpham.php">Sản phẩm</a>
 	      </li>
-	         <li class="nav-item">
+	         <li class="nav-item active">
 	        <a class="nav-link" href="xulydanhmucbaiviet.php">Danh mục Bài viết</a>
 	      </li>
-	         <li class="nav-item">
+	         <li class="nav-item active">
 	        <a class="nav-link" href="xulybaiviet.php">Bài viết</a>
 	      </li>
-	       <li class="nav-item">
+	       <li class="nav-item active">
 	        <a class="nav-link" href="xulykhachhang.php">Khách hàng</a>
 	      </li>
 	      
 	    </ul>
 	  </div>
 	</nav><br><br>
-	<div class="container-fluid">
+	<div class="container-fluid" style="margin-left: 110px">
 		<div class="row">
 			
-			<div class="col-md-12">
-				<h4>Khách hàng</h4>
+			<div class="col-md-10">
+				<h4>Khách Hàng</h4>
 				<?php
 				$sql_select_khachhang = mysqli_query($con,"SELECT * FROM tbl_khachhang,tbl_giaodich WHERE tbl_khachhang.khachhang_id=tbl_giaodich.khachhang_id GROUP BY tbl_giaodich.magiaodich ORDER BY tbl_khachhang.khachhang_id DESC"); 
 				?> 
-				<table class="table table-bordered ">
+				<table class="table table-hover" border="0.5" style="margin-top: 30px">
 					<tr>
 						<th>Thứ tự</th>
 						<th>Tên khách hàng</th>
@@ -76,7 +76,7 @@
 			</div>
 
 			<div class="col-md-12">
-				<h4>Liệt kê lịch sử đơn hàng</h4>
+				<h4 style="margin-top: 30px">Liệt kê lịch sử đơn hàng</h4>
 				<?php
 				if(isset($_GET['khachhang'])){
 					$magiaodich = $_GET['khachhang'];
@@ -85,7 +85,7 @@
 				}
 				$sql_select = mysqli_query($con,"SELECT * FROM tbl_giaodich,tbl_khachhang,tbl_sanpham WHERE tbl_giaodich.sanpham_id=tbl_sanpham.sanpham_id AND tbl_khachhang.khachhang_id=tbl_giaodich.khachhang_id AND tbl_giaodich.magiaodich='$magiaodich' ORDER BY tbl_giaodich.giaodich_id DESC"); 
 				?> 
-				<table class="table table-bordered ">
+				<table class="table table-hover" border="0.5">
 					<tr>
 						<th>Thứ tự</th>
 						<th>Mã giao dịch</th>

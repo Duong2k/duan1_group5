@@ -20,23 +20,30 @@
 	<meta charset="UTF-8">
 	<title>Welcome Admin</title>
 	<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<script src="../admin/js/jquery.min.js"></script>
 </head>
 <body>
-	<p>Xin chào : <?php echo $_SESSION['dangnhap'] ?> <a href="?login=dangxuat">Đăng xuất</a></p>
+	<p style="margin-left: 25px">Xin chào : <?php echo $_SESSION['dangnhap'] ?> <a href="?login=dangxuat" onclick="return confirm('Bạn chắc chắn muốn đăng xuất chứ?')">Đăng Xuất</a></p>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 	  <div class="collapse navbar-collapse" id="navbarNav">
 	    <ul class="navbar-nav">
 	      <li class="nav-item active">
-	        <a class="nav-link" href="#">Đơn hàng <span class="sr-only">(current)</span></a>
+	        <a class="nav-link" href="xulydonhang.php">Đơn Hàng</a>
 	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="xulydanhmuc.php">Danh mục</a>
+	      <li class="nav-item active">
+	        <a class="nav-link" href="xulydanhmuc.php">Danh Mục</a>
 	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="xulysanpham.php">Sản phẩm</a>
+		  <li class="nav-item active">
+	        <a class="nav-link" href="xulydanhmucbaiviet.php">Danh Mục Bài Viết</a>
 	      </li>
-	       <li class="nav-item">
-	        <a class="nav-link" href="#">Khách hàng</a>
+		  <li class="nav-item active">
+	        <a class="nav-link" href="xulybaiviet.php">Bài Viết</a>
+	      </li>
+	      <li class="nav-item active">
+	        <a class="nav-link" href="xulysanpham.php">Sản Phẩm</a>
+	      </li>
+	       <li class="nav-item active">
+	        <a class="nav-link" href="xulykhachhang.php">Khách hàng</a>
 	      </li>
 	      
 	    </ul>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 23, 2022 lúc 09:12 PM
+-- Thời gian đã tạo: Th10 28, 2022 lúc 03:56 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -61,11 +61,11 @@ CREATE TABLE `tbl_baiviet` (
 --
 
 INSERT INTO `tbl_baiviet` (`baiviet_id`, `tenbaiviet`, `tomtat`, `noidung`, `danhmuctin_id`, `baiviet_image`) VALUES
-(1, 'Bài 1 : Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 1, 'a4.jpg'),
-(2, 'Bài 2: Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 2, 'm3.jpg'),
-(3, 'Bài 3: Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 3, 'k2.jpg'),
-(4, 'Bài 4 :Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 4, 'b4.jpg'),
-(5, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'Bài 5 : Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 4, 'm8.jpg');
+(1, 'Giày chất lượng', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 1, 'giay3.jpg'),
+(2, 'Giày chất lượng và đẹp', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 2, 'g3.jpg'),
+(3, 'Quần chất lượng và bền bỉ', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 3, 'quan1.jpg'),
+(4, 'Áo khoác chất lượng cao', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 4, 'thethao1.jpg'),
+(5, 'Áo khoác đẹp và bền bỉ', 'Chất liệu vải thun mè cao cấp nhất, chuẩn Thái Lan.\r\nForm ôm body rất đẹp và vừa vặn.\r\nHàng chất lượng cao, thoáng mát, không nhăn, không xù lông.\r\nMẫu áo thiết kế chuẩn form Player hiện đại và tinh tế.', 'Rất đẹp và bắt mắt', 4, 'quan2.jpg');
 
 -- --------------------------------------------------------
 
@@ -83,11 +83,10 @@ CREATE TABLE `tbl_category` (
 --
 
 INSERT INTO `tbl_category` (`category_id`, `category_name`) VALUES
-(1, 'Laptop'),
-(2, 'Tủ lạnh'),
-(3, 'Máy giặc'),
-(4, 'Điện thoại'),
-(5, 'Tivi ');
+(2, 'Giày Bóng Đá'),
+(3, 'Giày Thể Thao'),
+(4, 'Quần Thể Thao'),
+(5, 'Áo Thể Thao');
 
 -- --------------------------------------------------------
 
@@ -105,10 +104,10 @@ CREATE TABLE `tbl_danhmuc_tin` (
 --
 
 INSERT INTO `tbl_danhmuc_tin` (`danhmuctin_id`, `tendanhmuc`) VALUES
-(1, 'Kiến thức máy lạnh'),
-(2, 'Kiến thức máy giặc'),
-(3, 'Kiến thức laptop'),
-(4, 'Kiến thức Tivi');
+(1, 'Thông Tin Giày Bóng Đá'),
+(2, 'Thông Tin Giày Thể Thao'),
+(3, 'Thông Tin Quần Thể Thao'),
+(4, 'Thông Tin Áo Thể Thao');
 
 -- --------------------------------------------------------
 
@@ -132,9 +131,6 @@ CREATE TABLE `tbl_donhang` (
 --
 
 INSERT INTO `tbl_donhang` (`donhang_id`, `sanpham_id`, `soluong`, `mahang`, `khachhang_id`, `ngaythang`, `tinhtrang`, `huydon`) VALUES
-(10, 17, 7, '3060', 12, '2019-10-01 04:11:55', 1, 0),
-(11, 21, 5, '8979', 14, '2019-10-04 02:29:52', 0, 0),
-(12, 26, 6, '8979', 14, '2019-10-04 02:29:52', 0, 0),
 (13, 20, 3, '4236', 15, '2019-10-04 02:33:55', 0, 0),
 (14, 21, 4, '4236', 15, '2019-10-04 02:33:56', 0, 0),
 (15, 20, 3, '6503', 16, '2019-10-04 02:34:56', 0, 0),
@@ -146,22 +142,17 @@ INSERT INTO `tbl_donhang` (`donhang_id`, `sanpham_id`, `soluong`, `mahang`, `kha
 (21, 20, 1, '5037', 20, '2019-10-04 02:48:17', 0, 0),
 (22, 21, 1, '1594', 21, '2019-10-04 02:51:05', 0, 0),
 (23, 20, 1, '1594', 21, '2019-10-04 02:51:05', 0, 0),
-(24, 20, 1, '2323', 22, '2019-10-04 02:54:27', 0, 0),
-(25, 21, 3, '2323', 22, '2019-10-04 02:54:27', 0, 0),
-(26, 21, 2, '5737', 23, '2019-10-04 02:57:00', 0, 0),
-(28, 25, 3, '7785', 25, '2019-10-04 03:11:51', 0, 0),
-(29, 22, 5, '7785', 25, '2019-10-04 03:11:52', 0, 0),
-(30, 27, 2, '7785', 25, '2019-10-04 03:11:52', 0, 0),
-(31, 21, 1, '5396', 26, '2019-10-04 03:49:08', 0, 0),
-(32, 20, 3, '5396', 26, '2019-10-04 03:49:08', 0, 0),
-(33, 20, 3, '7914', 28, '2019-10-05 05:38:42', 0, 0),
-(34, 26, 1, '7914', 28, '2019-10-05 05:38:42', 0, 0),
-(35, 25, 2, '6687', 27, '2019-10-09 09:48:42', 1, 2),
-(36, 26, 3, '6687', 27, '2019-10-09 09:48:42', 1, 2),
-(37, 27, 1, '6687', 27, '2019-10-09 09:48:42', 1, 2),
-(38, 22, 1, '1125', 27, '2019-10-09 09:47:17', 1, 2),
-(39, 24, 1, '1125', 27, '2019-10-09 09:47:17', 1, 2),
-(40, 20, 1, '555', 27, '2019-10-09 09:50:07', 0, 2);
+(75, 19, 1, '1700', 29, '2022-11-25 19:11:10', 3, 0),
+(80, 21, 1, '3685', 29, '2022-11-25 19:19:30', 0, 0),
+(81, 27, 1, '5311', 31, '2022-11-26 04:49:01', 0, 0),
+(82, 27, 1, '8355', 32, '2022-11-26 04:50:57', 0, 0),
+(83, 26, 1, '8982', 32, '2022-11-26 04:51:31', 0, 0),
+(84, 19, 1, '618', 33, '2022-11-26 07:27:06', 0, 0),
+(85, 19, 1, '146', 35, '2022-11-26 07:56:04', 2, 0),
+(86, 19, 1, '3525', 35, '2022-11-26 08:14:10', 0, 0),
+(87, 19, 1, '9375', 35, '2022-11-26 08:19:31', 0, 0),
+(88, 19, 1, '6888', 35, '2022-11-26 08:20:26', 0, 0),
+(89, 19, 1, '3577', 35, '2022-11-26 08:21:58', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -197,9 +188,22 @@ INSERT INTO `tbl_giaodich` (`giaodich_id`, `sanpham_id`, `soluong`, `magiaodich`
 (12, 25, 2, '6687', '2019-10-09 09:48:42', 27, 1, 2),
 (13, 26, 3, '6687', '2019-10-09 09:48:42', 27, 1, 2),
 (14, 27, 1, '6687', '2019-10-09 09:48:42', 27, 1, 2),
-(15, 22, 1, '1125', '2019-10-09 09:47:17', 27, 1, 2),
-(16, 24, 1, '1125', '2019-10-09 09:47:17', 27, 1, 2),
-(17, 20, 1, '555', '2019-10-09 09:50:08', 27, 0, 2);
+(15, 22, 1, '1125', '2022-11-24 05:56:29', 27, 3, 2),
+(16, 24, 1, '1125', '2022-11-24 05:56:29', 27, 3, 2),
+(17, 20, 1, '555', '2019-10-09 09:50:08', 27, 0, 2),
+(18, 26, 1, '6889', '2022-11-23 22:45:21', 30, 0, 0),
+(19, 21, 1, '6889', '2022-11-23 22:45:21', 30, 0, 0),
+(20, 22, 2, '6889', '2022-11-23 22:45:21', 30, 0, 0),
+(57, 21, 1, '3685', '2022-11-25 19:19:30', 29, 0, 0),
+(58, 27, 1, '5311', '2022-11-26 04:49:01', 31, 0, 0),
+(59, 27, 1, '8355', '2022-11-26 04:50:57', 32, 0, 0),
+(60, 26, 1, '8982', '2022-11-26 04:51:31', 32, 0, 0),
+(61, 19, 1, '618', '2022-11-26 07:27:06', 33, 0, 0),
+(62, 19, 1, '146', '2022-11-26 07:56:04', 35, 2, 0),
+(63, 19, 1, '3525', '2022-11-26 08:14:10', 35, 0, 0),
+(64, 19, 1, '9375', '2022-11-26 08:19:31', 35, 0, 0),
+(65, 19, 1, '6888', '2022-11-26 08:20:26', 35, 0, 0),
+(66, 19, 1, '3577', '2022-11-26 08:21:58', 35, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -210,19 +214,12 @@ INSERT INTO `tbl_giaodich` (`giaodich_id`, `sanpham_id`, `soluong`, `magiaodich`
 CREATE TABLE `tbl_giohang` (
   `giohang_id` int(11) NOT NULL,
   `tensanpham` varchar(100) NOT NULL,
+  `size` varchar(255) NOT NULL,
   `sanpham_id` int(11) NOT NULL,
   `giasanpham` varchar(50) NOT NULL,
   `hinhanh` varchar(50) NOT NULL,
   `soluong` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Đang đổ dữ liệu cho bảng `tbl_giohang`
---
-
-INSERT INTO `tbl_giohang` (`giohang_id`, `tensanpham`, `sanpham_id`, `giasanpham`, `hinhanh`, `soluong`) VALUES
-(1, 'Máy giặc Samsung', 26, '105000000', 'm8.jpg', 1),
-(2, 'Galaxy A15', 21, '15000000', 'mk3.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -246,16 +243,12 @@ CREATE TABLE `tbl_khachhang` (
 --
 
 INSERT INTO `tbl_khachhang` (`khachhang_id`, `name`, `phone`, `address`, `note`, `email`, `password`, `giaohang`) VALUES
-(12, 'Hiếu', '0932023992', '123/123', 'dasdasdas', 'hieu@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 1),
-(13, 'Long Hoàng', '01694494813', '123/123', 'dasdasdas', 'long@gmail.com', '0192023a7bbd73250516f069df18b500', 0),
-(14, 'Hoàng Long', '0932023992', '123/123', 'dsadas', 'hoanglong@gmail.com', '', 1),
-(22, 'Nam', '0932023992', '123/123', 'dasdas', 'name123@gmail.com', '', 1),
-(23, 'Nam', '0932023992', '123/123', 'dasdasd', 'name456@gmail.com', '', 1),
-(24, 'Hoa', '0932023992', '123/123', 'dasdas', 'hoa@gmail.com', '', 0),
-(25, 'Hoàng Kha', '0932023992', '123/123', 'dasdasdas', 'hoangkha@gmail.com', '', 1),
-(26, 'Trương Lưu', '0932023992', '123/123', 'dasdasdas', 'truongluu@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 1),
-(27, 'Trương Huệ Mẫn', '0932023992', '123', 'dasdasdasd', 'hueman@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 0),
-(28, 'Hoa', '0932023992', '123/123', 'dasdasdads', 'hoa@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 0);
+(29, 'Quang Dương', '0383390125', 'Hà Nội', 'Xin chào', 'boday382033@gmail.com', '5ec829debe54b19a5f78d9a65b900a39', 0),
+(31, 'Văn Dương', '0383390125', 'Hà nội', 'Xin chào', 'duonghvph26744@fpt.edu.vn', 'd41d8cd98f00b204e9800998ecf8427e', 0),
+(32, 'Văn Dương', '0383390125', 'Hà nội', 'Xin chào', 'duonghvph26744@fpt.edu.vn', 'd41d8cd98f00b204e9800998ecf8427e', 0),
+(33, 'Văn Mạnh', '0383390125', 'Hà Nội', 'Xin chào', 'manh@gmail.com', 'c5b2cebf15b205503560c4e8e6d1ea78', 1),
+(34, 'Quang Dương', '0383390125', 'Hà Nội', 'Xin chào', 'boday382033@gmail.com', 'c5b2cebf15b205503560c4e8e6d1ea78', 0),
+(35, 'Văn Dương', '0383390125', 'Hà Nội', 'gbcgg', 'boday382033@gmail.com', 'c5b2cebf15b205503560c4e8e6d1ea78', 0);
 
 -- --------------------------------------------------------
 
@@ -267,6 +260,8 @@ CREATE TABLE `tbl_sanpham` (
   `sanpham_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
   `sanpham_name` varchar(255) NOT NULL,
+  `sanpham_size` varchar(255) NOT NULL,
+  `sanpham_color` varchar(255) NOT NULL,
   `sanpham_chitiet` text NOT NULL,
   `sanpham_mota` text NOT NULL,
   `sanpham_gia` varchar(100) NOT NULL,
@@ -281,18 +276,16 @@ CREATE TABLE `tbl_sanpham` (
 -- Đang đổ dữ liệu cho bảng `tbl_sanpham`
 --
 
-INSERT INTO `tbl_sanpham` (`sanpham_id`, `category_id`, `sanpham_name`, `sanpham_chitiet`, `sanpham_mota`, `sanpham_gia`, `sanpham_giakhuyenmai`, `sanpham_active`, `sanpham_hot`, `sanpham_soluong`, `sanpham_image`) VALUES
-(17, 2, 'Tủ lạnh A10', 'dasdasdasadasd', 'dasdasddsadasds', '6000000', '5500000', 0, 0, 10, 'k2.jpg'),
-(18, 5, 'Tivi sony 29\'', 'asdasd', 'dasdasd', '5000000', '4500000', 0, 0, 1, 'm4.jpg'),
-(19, 5, 'Tivi sony 40\'', 'asdasd', 'dasdasd', '5600000', '4800000', 0, 0, 1, 'm4.jpg'),
-(20, 4, 'Galaxy A10', 'dasdad', 'dasdas', '15000000', '14000000', 0, 0, 10, 'mk2.jpg'),
-(21, 4, 'Galaxy A15', 'dasdad', 'dasdas', '15000000', '14000000', 0, 0, 10, 'mk3.jpg'),
-(22, 2, 'Tủ lạnh sony ', 'dasdad', 'dasdas', '75000000', '68000000', 0, 0, 5, 'k2.jpg'),
-(23, 2, 'Tủ lạnh Samsung', 'dasdaddasda', 'dasdasdasd', '105000000', '94000000', 0, 0, 10, 'k2.jpg'),
-(24, 1, 'Laptop Sony', 'sfsdf', 'adsf', '6000000', '5500000', 0, 0, 10, 'mk6.jpg'),
-(25, 1, 'Laptop A15', 'sfsdf', 'adsf', '6600000', '5300000', 0, 0, 10, 'mk6.jpg'),
-(26, 3, 'Máy giặc Samsung', 'dasdas', 'dsadas', '105000000', '99000000', 0, 0, 10, 'm8.jpg'),
-(27, 3, 'Máy giặc Shark', 'dasdas', 'dsadas', '75000000', '63000000', 0, 0, 10, 'm8.jpg');
+INSERT INTO `tbl_sanpham` (`sanpham_id`, `category_id`, `sanpham_name`, `sanpham_size`, `sanpham_color`, `sanpham_chitiet`, `sanpham_mota`, `sanpham_gia`, `sanpham_giakhuyenmai`, `sanpham_active`, `sanpham_hot`, `sanpham_soluong`, `sanpham_image`) VALUES
+(17, 2, 'GIÀY BÓNG ĐÁ WIKA HUNTER 2 TRẮNG', '', '', 'dasdasdasadasd', 'dasdasddsadasds', '500000', '350000', 0, 0, 10, 'giay3.jpg'),
+(18, 5, 'ÁO POLO DAS MÀU XANH DƯƠNG', '', '', 'Mềm và bền bỉ', 'Chất lượng tốt', '300000', '190000', 0, 0, 10, 'thethao2.jpg'),
+(19, 5, 'ÁO BODY ADIDAS MÃ A40', '', '', 'Vải mềm nhẹ nhàng', 'Chất lượng tốt', '200000', '120000', 0, 0, 5, 'thethao1.jpg'),
+(20, 4, 'QUẦN SHORT LACOSTE – MÃ Q29', '', '', 'dasdad', 'dasdas', '250000', '170000', 0, 0, 15, 'quan2.jpg'),
+(21, 4, 'QUẦN DÀI ADIDAS ỐNG SUÔNG – MÃ Q03', '', '', 'dasdad', 'dasdas', '290000', '190000', 0, 0, 10, 'quan1.jpg'),
+(22, 2, 'GIÀY BÓNG ĐÁ WIKA HUNTER 2 ĐEN', '', '', 'dasdad', 'dasdas', '500000', '350000', 0, 0, 5, 'giay2.jpg'),
+(23, 2, 'GIÀY BÓNG ĐÁ WIKA HUNTER 2 CAM', '', '', 'dasdaddasda', 'dasdasdasd', '500000', '350000', 0, 0, 10, 'giay1.jpg'),
+(26, 3, 'GIẦY THỂ THAO NAM CHẠY BỘ MÃ S12', '', '', 'dasdas', 'dsadas', '400000', '299000', 0, 0, 10, 'g3.jpg'),
+(27, 3, 'GIẦY CASUAL NAM THỜI TRANG MÃ S19', '', '', 'dasdas', 'dsadas', '500000', '390000', 0, 0, 10, 'g1.jpg');
 
 -- --------------------------------------------------------
 
@@ -312,8 +305,8 @@ CREATE TABLE `tbl_slider` (
 --
 
 INSERT INTO `tbl_slider` (`slider_id`, `slider_image`, `slider_caption`, `slider_active`) VALUES
-(1, 'b2.jpg', 'Slider khuyến mãi ', 1),
-(2, 'b3.jpg', 'Slider 50%', 0);
+(1, 'banner1.png', 'Slider khuyến mãi ', 1),
+(2, 'banner2.png', 'Slider 50%', 0);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -411,31 +404,31 @@ ALTER TABLE `tbl_danhmuc_tin`
 -- AUTO_INCREMENT cho bảng `tbl_donhang`
 --
 ALTER TABLE `tbl_donhang`
-  MODIFY `donhang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `donhang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_giaodich`
 --
 ALTER TABLE `tbl_giaodich`
-  MODIFY `giaodich_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `giaodich_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_giohang`
 --
 ALTER TABLE `tbl_giohang`
-  MODIFY `giohang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `giohang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_khachhang`
 --
 ALTER TABLE `tbl_khachhang`
-  MODIFY `khachhang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `khachhang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_sanpham`
 --
 ALTER TABLE `tbl_sanpham`
-  MODIFY `sanpham_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `sanpham_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_slider`

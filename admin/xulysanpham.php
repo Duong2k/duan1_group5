@@ -87,10 +87,10 @@
 				$row_capnhat = mysqli_fetch_array($sql_capnhat);
 				$id_category_1 = $row_capnhat['category_id'];
 				?>
-				<div class="col-md-4">
-				<h4>Cập nhật sản phẩm</h4>
+				<div class="col-md-12">
+				<h4>Cập Nhật Sản Phẩm</h4>
 				
-				<form action="" method="POST" enctype="multipart/form-data">
+				<form action="" method="POST" enctype="multipart/form-data"  style="margin-top: 30px">
 					<label>Tên sản phẩm</label>
 					<input type="text" class="form-control" name="tensanpham" value="<?php echo $row_capnhat['sanpham_name'] ?>"><br>
 					<input type="hidden" class="form-control" name="id_update" value="<?php echo $row_capnhat['sanpham_id'] ?>">
@@ -127,16 +127,16 @@
 						}
 						?>
 					</select><br>
-					<input type="submit" name="capnhatsanpham" value="Cập nhật sản phẩm" class="btn btn-default">
+					<input type="submit" name="capnhatsanpham" value="Cập nhật sản phẩm" class="btn btn-success">
 				</form>
 				</div>
 			<?php
 			}else{
 				?> 
-				<div class="col-md-4">
+				<div class="col-md-12">
 				<h4>Thêm sản phẩm</h4>
 				
-				<form action="" method="POST" enctype="multipart/form-data">
+				<form action="" method="POST" enctype="multipart/form-data" style="margin-top: 30px">
 					<label>Tên sản phẩm</label>
 					<input type="text" class="form-control" name="tensanpham" placeholder="Tên sản phẩm"><br>
 					<label>Hình ảnh</label>
@@ -165,19 +165,19 @@
 						}
 						?>
 					</select><br>
-					<input type="submit" name="themsanpham" value="Thêm sản phẩm" class="btn btn-default">
+					<input type="submit" name="themsanpham" value="Thêm sản phẩm" class="btn btn-success">
 				</form>
 				</div>
 				<?php
 			} 
 			
 				?>
-			<div class="col-md-8">
-				<h4>Liệt kê sản phẩm</h4>
+			<div class="col-md-15">
+				<h4 style="margin-top: 60px">Liệt Kê Sản Phẩm</h4>
 				<?php
 				$sql_select_sp = mysqli_query($con,"SELECT * FROM tbl_sanpham,tbl_category WHERE tbl_sanpham.category_id=tbl_category.category_id ORDER BY tbl_sanpham.sanpham_id DESC"); 
 				?> 
-				<table class="table table-bordered ">
+				<table class="table table-hover" border="0.5">
 					<tr>
 						<th>Thứ tự</th>
 						<th>Tên sản phẩm</th>
@@ -199,9 +199,11 @@
 						<td><img src="../uploads/<?php echo $row_sp['sanpham_image'] ?>" height="100" width="80"></td>
 						<td><?php echo $row_sp['sanpham_soluong'] ?></td>
 						<td><?php echo $row_sp['category_name'] ?></td>
-						<td><?php echo number_format($row_sp['sanpham_gia']).'vnđ' ?></td>
-						<td><?php echo number_format($row_sp['sanpham_giakhuyenmai']).'vnđ' ?></td>
-						<td><a href="?xoa=<?php echo $row_sp['sanpham_id'] ?>">Xóa</a> || <a href="xulysanpham.php?quanly=capnhat&capnhat_id=<?php echo $row_sp['sanpham_id'] ?>">Cập nhật</a></td>
+						<td><?php echo number_format($row_sp['sanpham_gia']).'<span> VNĐ</span>' ?></td>
+						<td><?php echo number_format($row_sp['sanpham_giakhuyenmai']).'<span> VNĐ</span>' ?></td>
+						<td>
+							<a href="?xoa=<?php echo $row_sp['sanpham_id'] ?>" class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa chứ?')">Xóa</a>
+							<a href="xulysanpham.php?quanly=capnhat&capnhat_id=<?php echo $row_sp['sanpham_id'] ?>" class="btn btn-success">Sửa</a></td>
 					</tr>
 				<?php
 					} 

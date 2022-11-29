@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="../admin/js/jquery.min.js"></script>
+</head>
+<body>
 <?php
 	include('../db/connect.php');
 ?>
@@ -81,8 +90,8 @@
 				$row_capnhat = mysqli_fetch_array($sql_capnhat);
 				$id_category_1 = $row_capnhat['danhmuctin_id'];
 				?>
-				<div class="col-md-4">
-				<h4>Cập nhật bài viết</h4>
+				<div class="col-md-12">
+				<h4>Cập Nhật Bài Viết</h4>
 				
 				<form action="" method="POST" enctype="multipart/form-data">
 					<label>Tên bài viết</label>
@@ -90,7 +99,7 @@
 					<input type="hidden" class="form-control" name="id_update" value="<?php echo $row_capnhat['baiviet_id'] ?>">
 					<label>Hình ảnh</label>
 					<input type="file" class="form-control" name="hinhanh"><br>
-					<img src="../uploads/<?php echo $row_capnhat['baiviet_image'] ?>" height="80" width="80"><br>
+					<img src="../uploads/<?php echo $row_capnhat['baiviet_image'] ?>" height="80" width="80"><br><br>
 					
 				
 					<label>Mô tả</label>
@@ -117,16 +126,16 @@
 						}
 						?>
 					</select><br>
-					<input type="submit" name="capnhatbaiviet" value="Cập nhật bài viết" class="btn btn-default">
+					<input type="submit" name="capnhatbaiviet" value="Cập nhật bài viết" class="btn btn-success">
 				</form>
 				</div>
 			<?php
 			}else{
 				?> 
-				<div class="col-md-4">
+				<div class="col-md-12">
 				<h4>Thêm bài viết</h4>
 				
-				<form action="" method="POST" enctype="multipart/form-data">
+				<form action="" method="POST" enctype="multipart/form-data" style="margin-top: 30px">
 					<label>Tên sản phẩm</label>
 					<input type="text" class="form-control" name="tenbaiviet" placeholder="Tên bài viết"><br>
 					<label>Hình ảnh</label>
@@ -150,26 +159,24 @@
 						}
 						?>
 					</select><br>
-					<input type="submit" name="thembaiviet" value="Thêm bài viết" class="btn btn-default">
+					<input type="submit" name="thembaiviet" value="Thêm bài viết" class="btn btn-success">
 				</form>
 				</div>
 				<?php
 			} 
 			
 				?>
-			<div class="col-md-8">
-				<h4>Liệt kê bài viết</h4>
+			<div class="col-md-12">
+				<h4 style="margin-top: 60px">Liệt Kê Bài Viết</h4>
 				<?php
 				$sql_select_bv = mysqli_query($con,"SELECT * FROM tbl_baiviet,tbl_danhmuc_tin WHERE tbl_baiviet.danhmuctin_id=tbl_danhmuc_tin.danhmuctin_id ORDER BY tbl_baiviet.baiviet_id DESC"); 
 				?> 
-				<table class="table table-bordered ">
+				<table class="table table-hover" border="0.5">
 					<tr>
 						<th>Thứ tự</th>
 						<th>Tên sản phẩm</th>
 						<th>Hình ảnh</th>
-					
 						<th>Danh mục</th>
-						
 						<th>Quản lý</th>
 					</tr>
 					<?php
@@ -184,7 +191,10 @@
 
 						<td><?php echo $row_bv['tendanhmuc'] ?></td>
 						
-						<td><a href="?xoa=<?php echo $row_bv['baiviet_id'] ?>">Xóa</a> || <a href="xulybaiviet.php?quanly=capnhat&capnhat_id=<?php echo $row_bv['baiviet_id'] ?>">Cập nhật</a></td>
+						<td>
+							<a href="?xoa=<?php echo $row_bv['baiviet_id'] ?>" class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa chứ?')">Xóa</a> 
+							<a href="xulybaiviet.php?quanly=capnhat&capnhat_id=<?php echo $row_bv['baiviet_id'] ?>" class="btn btn-success">Sửa</a>
+						</td>
 					</tr>
 				<?php
 					} 
@@ -196,3 +206,4 @@
 	
 </body>
 </html>
+

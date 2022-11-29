@@ -1,6 +1,6 @@
 <?php
-	session_start();
- include('../db/connect.php'); 
+session_start();
+include('../db/connect.php'); 
 ?>
 <?php
 	// session_destroy();
@@ -9,7 +9,7 @@
 		$taikhoan = $_POST['taikhoan'];
 		$matkhau = md5($_POST['matkhau']);
 		if($taikhoan=='' || $matkhau ==''){
-			echo '<p>Xin nhập đủ</p>';
+			echo '<p>Vui lòng nhập đủ</p>';
 		}else{
 			$sql_select_admin = mysqli_query($con,"SELECT * FROM tbl_admin WHERE email='$taikhoan' AND password='$matkhau' LIMIT 1");
 			$count = mysqli_num_rows($sql_select_admin);
@@ -30,17 +30,40 @@
 	<meta charset="UTF-8">
 	<title>Đăng nhập Admin</title>
 	<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<script src="public/js/jquery.min.js"></script>
+	<style>
+		h2{
+			margin-top: 30px;
+			font-family: sans-serif;
+			font-weight: bold;
+			box-shadow: 5px 5px 5px -5px gray;
+		}
+		#form{
+			margin-left: 510px;
+		}
+		#taikhoan{
+			margin-top: 30px;
+			font-family: sans-serif;
+		}
+		#dangnhap{
+			margin-left: 140px;
+		}
+		#quaylai{
+			margin-left: 20px;
+		}
+	</style>
 </head>
 <body>
-	<h2 align="center">Đăng nhập Admin</h2>
-	<div class="col-md-6">
+	<h2 align="center">Đăng Nhập Admin</h2>
+	<div class="col-md-8">
 	<div class="form-group">
-		<form action="" method="POST">
-		<label>Tài khoản</label>
-		<input type="text" name="taikhoan" placeholder="Điền Email" class="form-control"><br>
-		<label>Mật khẩu</label>
-		<input type="password" name="matkhau" placeholder="Điền mật khẩu" class="form-control"><br>
-		<input type="submit" name="dangnhap" class="btn btn-primary" value="Đăng nhập Admin">
+		<form action="" method="POST" id="form">
+		<label id="taikhoan">Tài Khoản</label>
+		<input type="text" name="taikhoan" placeholder="Điền Email" class="form-control" required=""><br>
+		<label>Mật Khẩu</label>
+		<input type="password" name="matkhau" placeholder="Điền mật khẩu" class="form-control" required=""><br>
+		<input type="submit" name="dangnhap" id="dangnhap" class="btn btn-success" value="Đăng nhập">
+		<a href="../index.php" id="quaylai" class="btn btn-primary">Quay lại</a>
 		</form>
 	</div>
 	</div>

@@ -17,16 +17,18 @@
 			<!-- //tittle heading -->
 			<div class="row">
 				<!-- product left -->
-				<div class="agileinfo-ads-display col-lg-9">
+				<div class="agileinfo-ads-display col-lg-12">
 					<div class="wrapper">
 						<!-- first section -->
 						
 							<div class="row">
-								<?php
-								if(isset($_SESSION['dangnhap_home'])){
-									echo 'Đơn hàng : '.$_SESSION['dangnhap_home'];
-								} 
-								?>
+								<div class="donhang" style="margin-left: 20px; font-weight: bold">
+									<?php
+										if(isset($_SESSION['dangnhap_home'])){
+										echo 'Đơn hàng : '.$_SESSION['dangnhap_home'];
+										} 
+									?>
+								</div>
 							<div class="col-md-12">
 								
 								<?php
@@ -37,11 +39,10 @@
 								}
 								$sql_select = mysqli_query($con,"SELECT * FROM tbl_giaodich WHERE tbl_giaodich.khachhang_id='$id_khachhang' GROUP BY tbl_giaodich.magiaodich"); 
 								?> 
-								<table class="table table-bordered ">
+								<table class="table table-hover" border="0.5" style="margin-top: 20px">
 									<tr>
 										<th>Thứ tự</th>
 										<th>Mã giao dịch</th>
-									
 										<th>Ngày đặt</th>
 										<th>Quản lý</th>
 										<th>Tình trạng</th>
@@ -62,9 +63,13 @@
 										<td><a href="index.php?quanly=xemdonhang&khachhang=<?php echo $_SESSION['khachhang_id'] ?>&magiaodich=<?php echo $row_donhang['magiaodich'] ?>">Xem chi tiết</a></td>
 										<td><?php 
 										if($row_donhang['tinhtrangdon']==0){
-											echo 'Đã đặt hàng';
+											echo 'Chưa xử lý';
+										}else if($row_donhang['tinhtrangdon']==1){
+											echo 'Đã xử lý';
+										}else if($row_donhang['tinhtrangdon']==2){
+											echo 'Đang giao';
 										}else{
-											echo 'Đã xử lý | Đang giao hàng';
+											echo 'Giao thành công';
 										}
 										?></td>
 										<td>
@@ -90,8 +95,8 @@
 							</div>
 
 
-							<div class="col-md-12">
-								<p>Chi tiết đơn hàng</p><br>
+							<div class="col-md-16">
+								<p style="margin-top: 20px; font-weight: bold">Chi tiết đơn hàng</p><br>
 								<?php
 								if(isset($_GET['magiaodich'])){
 									$magiaodich = $_GET['magiaodich'];
@@ -100,13 +105,17 @@
 								}
 								$sql_select = mysqli_query($con,"SELECT * FROM tbl_giaodich,tbl_khachhang,tbl_sanpham WHERE tbl_giaodich.sanpham_id=tbl_sanpham.sanpham_id AND tbl_khachhang.khachhang_id=tbl_giaodich.khachhang_id AND tbl_giaodich.magiaodich='$magiaodich' ORDER BY tbl_giaodich.giaodich_id DESC"); 
 								?> 
-								<table class="table table-bordered ">
+								<table class="table table-hover" border="0.5">
 									<tr>
-										<th>Thứ tự</th>
+										<th>STT</th>
 										<th>Mã giao dịch</th>
 										<th>Tên sản phẩm</th>
 										<th>Số lượng</th>
 										<th>Ngày đặt</th>
+										<th>Khách Hàng</th>
+										<th>Số ĐT</th>
+										<th>Địa Chỉ</th>
+										<th>Email</th>
 										
 									</tr>
 									<?php
@@ -125,7 +134,13 @@
 										
 										<td><?php echo $row_donhang['ngaythang'] ?></td>
 									
-										
+										<td><?php echo $row_donhang['name'] ?></td>
+
+										<td><?php echo $row_donhang['phone'] ?></td>
+
+										<td><?php echo $row_donhang['address'] ?></td>
+
+										<td><?php echo $row_donhang['email'] ?></td>
 									</tr>
 									 <?php
 									} 

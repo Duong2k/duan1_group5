@@ -1,8 +1,17 @@
-<!-- top Products -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+</head>
+<body>
+	<!-- top Products -->
 	<div class="ads-grid py-sm-5 py-4">
 		<div class="container py-xl-4 py-lg-2">
 			<!-- tittle heading -->
-			<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
+			<h3 class="text-center mb-lg-5 mb-sm-4 mb-3">
 				<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">Danh mục sản phẩm</h3>
 			<!-- //tittle heading -->
 			<div class="row">
@@ -23,7 +32,7 @@
 								while($row_sanpham = mysqli_fetch_array($sql_product)){ 
 									if($row_sanpham['category_id']==$id_category){
 								?>
-								<div class="col-md-4 product-men mt-5">
+								<div class="col-md-6 product-men mt-5">
 									<div class="men-pro-item simpleCart_shelfItem">
 										<div class="men-thumb-item text-center">
 											<img src="images/<?php echo $row_sanpham['sanpham_image'] ?>" alt="">
@@ -38,8 +47,8 @@
 												<a href="?quanly=chitietsp&id=<?php echo $row_sanpham['sanpham_id'] ?>"><?php echo $row_sanpham['sanpham_name'] ?></a>
 											</h4>
 											<div class="info-product-price my-2">
-												<span class="item_price"><?php echo number_format($row_sanpham['sanpham_giakhuyenmai']).'vnđ' ?></span>
-												<del><?php echo number_format($row_sanpham['sanpham_gia']).'vnđ' ?></del>
+												<span class="item_price"><?php echo number_format($row_sanpham['sanpham_giakhuyenmai']). '<span> VNĐ</span>' ?></span>
+												<del><?php echo number_format($row_sanpham['sanpham_gia']). '<span> VNĐ</span>' ?></del>
 											</div>
 											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
 												<form action="?quanly=giohang" method="post">
@@ -149,8 +158,8 @@
 										</div>
 										<div class="col-lg-9 col-sm-10 col-9 w3_mvd">
 											<a href=""><?php echo $row_sanpham_sidebar['sanpham_name'] ?></a>
-											<a href="" class="price-mar mt-2"><?php echo number_format($row_sanpham_sidebar['sanpham_giakhuyenmai']).'vnđ' ?></a>
-											<del><?php echo number_format($row_sanpham_sidebar['sanpham_gia']).'vnđ' ?></del>
+											<a href="" class="price-mar mt-2"><?php echo ($row_sanpham_sidebar['sanpham_giakhuyenmai']).'<span> VNĐ</span>' ?></a>
+											<del><?php echo ($row_sanpham_sidebar['sanpham_gia']).'<span> VNĐ</span>' ?></del>
 										</div>
 									</div>
 									<?php
@@ -169,3 +178,6 @@
 		</div>
 	</div>
 	<!-- //top products -->
+
+</body>
+</html>

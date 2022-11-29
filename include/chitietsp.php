@@ -15,7 +15,7 @@
 						<a href="index.php">Trang chủ</a>
 						<i>|</i>
 					</li>
-					<li>Single Product 1</li>
+					<li>Sản Phẩm</li>
 				</ul>
 			</div>
 		</div>
@@ -50,11 +50,20 @@
 				<div class="col-lg-7 single-right-left simpleCart_shelfItem">
 					<h3 class="mb-3"><?php echo $row_chitiet['sanpham_name'] ?></h3>
 					<p class="mb-3">
-						<span class="item_price"><?php echo number_format($row_chitiet['sanpham_giakhuyenmai']).'vnđ' ?></span>
-						<del class="mx-2 font-weight-light"><?php echo number_format($row_chitiet['sanpham_gia']).'vnđ' ?></del>
+						<span class="item_price"><?php echo number_format($row_chitiet['sanpham_giakhuyenmai']).'<span> VNĐ</span>' ?></span>
+						<del class="mx-2 font-weight-light"><?php echo number_format($row_chitiet['sanpham_gia']).'<span> VNĐ</span>' ?></del>
 						<label>Miễn phí vận chuyển</label>
 					</p>
-					
+					<div>
+						<select name="size" id="size">
+							<option value="chonsize">Mời chọn size</option>
+							<option value="M">Size M</option>
+							<option value="L">Size L</option>
+							<option value="XL">Size XL</option>
+							<option value="XXL">Size XXL</option>
+						</select>
+						<p><?php echo $row_chitiet['sanpham_size'] ?></p>
+					</div>
 					<div class="product-single-w3l">
 						<p><?php echo $row_chitiet['sanpham_chitiet'] ?></p><br><br>
 						<p><?php echo $row_chitiet['sanpham_mota'] ?></p>
@@ -67,6 +76,7 @@
 									<input type="hidden" name="sanpham_id" value="<?php echo $row_chitiet['sanpham_id'] ?>" />
 									<input type="hidden" name="giasanpham" value="<?php echo $row_chitiet['sanpham_gia'] ?>" />
 									<input type="hidden" name="hinhanh" value="<?php echo $row_chitiet['sanpham_image'] ?>" />
+									<input type="hidden" name="size" value="<?php echo $row_chitiet['sanpham_size'] ?>" />
 									<input type="hidden" name="soluong" value="1" />			
 									<input type="submit" name="themgiohang" value="Thêm giỏ hàng" class="button" />
 								</fieldset>

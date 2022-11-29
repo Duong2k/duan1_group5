@@ -3,15 +3,13 @@
 	include_once('db/connect.php');
  ?>
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
-	<title>Web bán điện máy</title>
+	<title>Shop Đồ Thể Thao</title>
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8" />
-	<meta name="keywords" content="Electro Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"
-	/>
 	<script>
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
@@ -76,7 +74,8 @@
 	 
 	include('include/footer.php'); 
 	?>
-	<!-- js-files -->
+
+
 	<!-- jquery -->
 	<script src="js/jquery-2.2.3.min.js"></script>
 	<!-- //jquery -->
@@ -119,17 +118,14 @@
 	<!-- //popup modal (for location)-->
 
 	<!-- cart-js -->
-	<!--  <script src="js/minicart.js"></script> -->
 	<script>
-		paypals.minicarts.render(); //use only unique class names other than paypals.minicarts.Also Replace same class name in css and minicart.min.js
+		paypals.minicarts.render(); 
 
 		paypals.minicarts.cart.on('checkout', function (evt) {
 			var items = this.items(),
 				len = items.length,
 				total = 0,
 				i;
-
-			// Count the number of each item in the cart
 			for (i = 0; i < len; i++) {
 				total += items[i].get('quantity');
 			}
@@ -156,19 +152,14 @@
 				document.getElementById("password2").setCustomValidity("Passwords Don't Match");
 			else
 				document.getElementById("password2").setCustomValidity('');
-			//empty string means no validation error
-		}
+			}
 	</script>
-	<!-- imagezoom -->
-	<script src="js/imagezoom.js"></script>
-	<!-- //imagezoom -->
 
 	<!-- flexslider -->
 	<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 
 	<script src="js/jquery.flexslider.js"></script>
 	<script>
-		// Can also be used with $(document).ready()
 		$(window).load(function () {
 			$('.flexslider').flexslider({
 				animation: "slide",
@@ -176,8 +167,7 @@
 			});
 		});
 	</script>
-	<!-- //FlexSlider-->
-	<!-- //password-script -->
+	<!-- //flexSlider-->
 	
 	<!-- scroll seller -->
 	<script src="js/scroll.js"></script>
@@ -206,14 +196,6 @@
 	<!-- smooth-scrolling-of-move-up -->
 	<script>
 		$(document).ready(function () {
-			/*
-			var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-			};
-			*/
 			$().UItoTop({
 				easingType: 'easeOutQuart'
 			});
@@ -222,10 +204,7 @@
 	</script>
 	<!-- //smooth-scrolling-of-move-up -->
 
-	<!-- for bootstrap working -->
 	<script src="js/bootstrap.js"></script>
-	<!-- //for bootstrap working -->
-	<!-- //js-files -->
 </body>
 
 </html>

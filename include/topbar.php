@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="../js/jquery.min.js"></script>
+</head>
+<body>
 <?php
 	// session_destroy();
 	// unset('dangnhap');
@@ -61,7 +70,7 @@
 					}
 						?>
 						<li class="text-center border-right text-white">
-							<i class="fas fa-phone mr-2"></i> 0909999999
+							<i class="fas fa-phone mr-2"></i> 0383390125
 						</li>
 						<li class="text-center border-right text-white">
 							<a href="#" data-toggle="modal" data-target="#dangnhap" class="text-white">
@@ -171,7 +180,7 @@
 				<div class="col-md-3 logo_agile">
 					<h1 class="text-center">
 						<a href="index.php" class="font-weight-bold font-italic">
-							<img src="images/logo2.png" alt=" " class="img-fluid">Electro Store
+							<img src="images/kingmen.png" alt=" " width="100px" class="img-fluid">KingMenSport
 						</a>
 					</h1>
 				</div>
@@ -193,9 +202,8 @@
 								<form action="#" method="post" class="last">
 									<input type="hidden" name="cmd" value="_cart">
 									<input type="hidden" name="display" value="1">
-									<button class="btn w3view-cart" type="submit" name="submit" value="">
-										<i class="fas fa-cart-arrow-down"></i>
-									</button>
+									
+									<p style="background-color: #4c5156; width: 50px; height: 45px"><a class="btn w3view-cart" href="index.php?quanly=giohang" style="padding-top: 5px; font-size: 20px; color: white"><i class="fas fa-cart-arrow-down"></i></a></p>			
 								</form>
 							</div>
 						</div>
@@ -208,3 +216,5 @@
 	<!-- shop locator (popup) -->
 	<!-- //header-bottom -->
 	<!-- navigation -->
+</body>
+</html>

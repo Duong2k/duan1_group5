@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="public/js/jquery.min.js"></script>
+</head>
+<body>
 <?php
  if(isset($_POST['themgiohang'])){
  	$tensanpham = $_POST['tensanpham'];
@@ -95,7 +104,7 @@
 			</h3>
 				<?php 
 				if(isset($_SESSION['dangnhap_home'])){
-					echo '<p style="color:#000;">Xin chào bạn: '.$_SESSION['dangnhap_home'].'<a href="index.php?quanly=giohang&dangxuat=1">Đăng xuất</a></p>';
+					echo '<p style="color:#000;">Xin chào: '.$_SESSION['dangnhap_home'].'<a href="index.php?quanly=giohang&dangxuat=1" style="font-weight: bold"> Đăng Xuất</a></p>';
 				}else{
 					echo '';
 				}
@@ -111,14 +120,13 @@
 				<div class="table-responsive">
 					<form action="" method="POST">
 					
-					<table class="timetable_sub">
+					<table class="timetable_sub" style="margin-top: 10px">
 						<thead>
 							<tr>
 								<th>Thứ tự</th>
 								<th>Sản phẩm</th>
 								<th>Số lượng</th>
 								<th>Tên sản phẩm</th>
-
 								<th>Giá</th>
 								<th>Giá tổng</th>
 								<th>Quản lý</th>
@@ -136,9 +144,9 @@
 						?>
 							<tr class="rem1">
 								<td class="invert"><?php echo $i ?></td>
-								<td class="invert-image">
-									<a href="single.html">
-										<img src="images/<?php echo $row_fetch_giohang['hinhanh'] ?>" alt=" " height="120" class="img-responsive">
+								<td>
+									<a href="">
+										<img src="images/<?php echo $row_fetch_giohang['hinhanh'] ?>" alt="" width="150" height="150" class="img-responsive">
 									</a>
 								</td>
 								<td class="invert">
@@ -148,17 +156,17 @@
 									
 								</td>
 								<td class="invert"><?php echo $row_fetch_giohang['tensanpham'] ?></td>
-								<td class="invert"><?php echo number_format($row_fetch_giohang['giasanpham']).'vnđ' ?></td>
-								<td class="invert"><?php echo number_format($subtotal).'vnđ' ?></td>
+								<td class="invert"><?php echo number_format($row_fetch_giohang['giasanpham']). '<span> VNĐ</span>' ?></td>
+								<td class="invert"><?php echo number_format($subtotal). '<span> VNĐ</span>' ?></td>
 								<td class="invert">
-									<a href="?quanly=giohang&xoa=<?php echo $row_fetch_giohang['giohang_id'] ?>">Xóa</a>
+									<a href="?quanly=giohang&xoa=<?php echo $row_fetch_giohang['giohang_id'] ?>" style="font-weight: bold" onclick="return confirm('Bạn chắc chắn muốn xóa chứ?')">Xóa</a>
 								</td>
 							</tr>
 							<?php
 							} 
 							?>
 							<tr>
-								<td colspan="7">Tổng tiền : <?php echo number_format($total).'vnđ' ?></td>
+								<td colspan="7">Tổng tiền : <?php echo number_format($total) . '<span> VNĐ</span>' ?></td>
 
 							</tr>
 							<tr>
@@ -167,7 +175,7 @@
 								$sql_giohang_select = mysqli_query($con,"SELECT * FROM tbl_giohang");
 								$count_giohang_select = mysqli_num_rows($sql_giohang_select);
 
-								if(isset($_SESSION['dangnhap_home']) && $count_giohang_select>0){
+								if(!isset($_SESSION['dangnhap_home']) && $count_giohang_select>0){
 									while($row_1 = mysqli_fetch_array($sql_giohang_select)){
 								?>
 								
@@ -177,9 +185,11 @@
 							}
 								?>
 								<input type="submit" class="btn btn-primary" value="Thanh toán giỏ hàng" name="thanhtoandangnhap">
-		
 								<?php
-								} 
+								} else{
+									echo '<a href="index.php" class="btn btn-primary" style="height: 38px">Tiếp tục mua hàng</a>';
+									echo '<h6 style="padding-top: 20px">Giỏ hàng của bạn đang trống!</h6>';
+								}
 								?>
 								
 								</td>
@@ -257,3 +267,5 @@
 		</div>
 	</div>
 	<!-- //checkout page -->
+</body>
+</html>
