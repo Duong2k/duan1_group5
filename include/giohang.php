@@ -4,7 +4,13 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="public/js/jquery.min.js"></script>
+	<script src="../js/jquery.min.js"></script>
+	<style>
+		@font-face {
+    		font-family: "Pattaya-Regular";
+    		src: url(Pattaya/Pattaya-Regular.ttf);
+		}
+	</style>
 </head>
 <body>
 <?php
@@ -97,14 +103,14 @@
 
 <!-- checkout page -->
 	<div class="privacy py-sm-5 py-4">
-		<div class="container py-xl-4 py-lg-2">
+		<div class="container py-xl-4 py-lg-2" style="font-family: Pattaya-Regular">
 			<!-- tittle heading -->
-			<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
+			<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3" style="font-family: Pattaya-Regular">
 				Giỏ hàng của bạn
 			</h3>
 				<?php 
 				if(isset($_SESSION['dangnhap_home'])){
-					echo '<p style="color:#000;">Xin chào: '.$_SESSION['dangnhap_home'].'<a href="index.php?quanly=giohang&dangxuat=1" style="font-weight: bold"> Đăng Xuất</a></p>';
+					echo '<p style="color:#000; font-family: Pattaya-Regular">Xin chào: '.$_SESSION['dangnhap_home'].'<a href="index.php?quanly=giohang&dangxuat=1" style="font-weight: bold"> Đăng Xuất</a></p>';
 				}else{
 					echo '';
 				}
@@ -166,16 +172,16 @@
 							} 
 							?>
 							<tr>
-								<td colspan="7">Tổng tiền : <?php echo number_format($total) . '<span> VNĐ</span>' ?></td>
+								<td colspan="8">Tổng tiền : <?php echo number_format($total) . '<span> VNĐ</span>' ?></td>
 
 							</tr>
 							<tr>
-								<td colspan="7"><input type="submit" class="btn btn-success" value="Cập nhật giỏ hàng" name="capnhatsoluong">
+								<td colspan="8"><input type="submit" class="btn btn-success" value="Cập nhật giỏ hàng" name="capnhatsoluong">
 								<?php 
 								$sql_giohang_select = mysqli_query($con,"SELECT * FROM tbl_giohang");
 								$count_giohang_select = mysqli_num_rows($sql_giohang_select);
 
-								if(!isset($_SESSION['dangnhap_home']) && $count_giohang_select>0){
+								if(isset($_SESSION['dangnhap_home']) && $count_giohang_select>0){
 									while($row_1 = mysqli_fetch_array($sql_giohang_select)){
 								?>
 								
@@ -185,10 +191,11 @@
 							}
 								?>
 								<input type="submit" class="btn btn-primary" value="Thanh toán giỏ hàng" name="thanhtoandangnhap">
+								<a href="index.php" class="btn btn-primary" style="height: 38px; font-family: Pattaya-Regular">Tiếp tục mua hàng</a>
 								<?php
 								} else{
-									echo '<a href="index.php" class="btn btn-primary" style="height: 38px">Tiếp tục mua hàng</a>';
-									echo '<h6 style="padding-top: 20px">Giỏ hàng của bạn đang trống!</h6>';
+									echo '<a href="index.php" class="btn btn-primary" style="height: 38px; font-family: Pattaya-Regular">Tiếp tục mua hàng</a>';
+									echo '<h6 style="padding-top: 20px; font-family: Pattaya-Regular">Giỏ hàng của bạn đang trống!</h6>';
 								}
 								?>
 								
@@ -205,7 +212,7 @@
 			?>
 			<div class="checkout-left">
 				<div class="address_form_agile mt-sm-5 mt-4">
-					<h4 class="mb-sm-4 mb-3">Thêm địa chỉ giao hàng</h4>
+					<h4 class="mb-sm-4 mb-3" style="font-family: Pattaya-Regular">Thêm địa chỉ giao hàng</h4>
 					<form action="" method="post" class="creditly-card-form agileinfo_form">
 						<div class="creditly-wrapper wthree, w3_agileits_wrapper">
 							<div class="information-wrapper">
@@ -229,7 +236,7 @@
 										<input type="text" class="form-control" placeholder="Email" name="email" required="">
 									</div>
 									<div class="controls form-group">
-										<input type="text" class="form-control" placeholder="Password" name="password" required="">
+										<input type="password" class="form-control" placeholder="Password" name="password" required="">
 									</div>
 									<div class="controls form-group">
 										<textarea style="resize: none;" class="form-control" placeholder="Ghi chú" name="note" required=""></textarea>  

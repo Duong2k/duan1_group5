@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 28, 2022 lúc 03:56 AM
+-- Thời gian đã tạo: Th12 08, 2022 lúc 06:25 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -86,7 +86,30 @@ INSERT INTO `tbl_category` (`category_id`, `category_name`) VALUES
 (2, 'Giày Bóng Đá'),
 (3, 'Giày Thể Thao'),
 (4, 'Quần Thể Thao'),
-(5, 'Áo Thể Thao');
+(5, 'Áo Thể Thao'),
+(6, 'Sản Phẩm KM');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_comment`
+--
+
+CREATE TABLE `tbl_comment` (
+  `comment_id` int(11) NOT NULL,
+  `ten` varchar(255) NOT NULL,
+  `content` varchar(255) NOT NULL,
+  `sanpham_id` int(11) NOT NULL,
+  `date_add` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_comment`
+--
+
+INSERT INTO `tbl_comment` (`comment_id`, `ten`, `content`, `sanpham_id`, `date_add`) VALUES
+(8, 'Văn Mạnh', 'Rất tuyệt', 81, '2022/12/07 08:44:13'),
+(10, 'Văn Hiếu', 'Rất hay', 81, '2022/12/07');
 
 -- --------------------------------------------------------
 
@@ -148,11 +171,14 @@ INSERT INTO `tbl_donhang` (`donhang_id`, `sanpham_id`, `soluong`, `mahang`, `kha
 (82, 27, 1, '8355', 32, '2022-11-26 04:50:57', 0, 0),
 (83, 26, 1, '8982', 32, '2022-11-26 04:51:31', 0, 0),
 (84, 19, 1, '618', 33, '2022-11-26 07:27:06', 0, 0),
-(85, 19, 1, '146', 35, '2022-11-26 07:56:04', 2, 0),
+(85, 19, 1, '146', 35, '2022-11-29 15:46:53', 3, 0),
 (86, 19, 1, '3525', 35, '2022-11-26 08:14:10', 0, 0),
 (87, 19, 1, '9375', 35, '2022-11-26 08:19:31', 0, 0),
 (88, 19, 1, '6888', 35, '2022-11-26 08:20:26', 0, 0),
-(89, 19, 1, '3577', 35, '2022-11-26 08:21:58', 0, 0);
+(89, 19, 1, '3577', 35, '2022-11-26 08:21:58', 0, 0),
+(90, 53, 1, '1578', 0, '2022-12-02 07:35:12', 0, 0),
+(91, 75, 1, '1578', 0, '2022-12-02 07:35:12', 0, 0),
+(92, 81, 1, '5419', 34, '2022-12-07 10:30:19', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -199,11 +225,14 @@ INSERT INTO `tbl_giaodich` (`giaodich_id`, `sanpham_id`, `soluong`, `magiaodich`
 (59, 27, 1, '8355', '2022-11-26 04:50:57', 32, 0, 0),
 (60, 26, 1, '8982', '2022-11-26 04:51:31', 32, 0, 0),
 (61, 19, 1, '618', '2022-11-26 07:27:06', 33, 0, 0),
-(62, 19, 1, '146', '2022-11-26 07:56:04', 35, 2, 0),
+(62, 19, 1, '146', '2022-11-29 15:46:53', 35, 3, 0),
 (63, 19, 1, '3525', '2022-11-26 08:14:10', 35, 0, 0),
 (64, 19, 1, '9375', '2022-11-26 08:19:31', 35, 0, 0),
 (65, 19, 1, '6888', '2022-11-26 08:20:26', 35, 0, 0),
-(66, 19, 1, '3577', '2022-11-26 08:21:58', 35, 0, 0);
+(66, 19, 1, '3577', '2022-11-26 08:21:58', 35, 0, 0),
+(67, 53, 1, '1578', '2022-12-02 07:35:12', 0, 0, 0),
+(68, 75, 1, '1578', '2022-12-02 07:35:12', 0, 0, 0),
+(69, 81, 1, '5419', '2022-12-07 10:30:19', 34, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -220,6 +249,13 @@ CREATE TABLE `tbl_giohang` (
   `hinhanh` varchar(50) NOT NULL,
   `soluong` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_giohang`
+--
+
+INSERT INTO `tbl_giohang` (`giohang_id`, `tensanpham`, `size`, `sanpham_id`, `giasanpham`, `hinhanh`, `soluong`) VALUES
+(57, 'ÁO THIẾT KẾ MỚI', '', 81, '500000', '10.png', 1);
 
 -- --------------------------------------------------------
 
@@ -266,6 +302,7 @@ CREATE TABLE `tbl_sanpham` (
   `sanpham_mota` text NOT NULL,
   `sanpham_gia` varchar(100) NOT NULL,
   `sanpham_giakhuyenmai` varchar(100) NOT NULL,
+  `sanpham_gift` varchar(255) NOT NULL,
   `sanpham_active` int(11) NOT NULL,
   `sanpham_hot` int(11) NOT NULL,
   `sanpham_soluong` int(11) NOT NULL,
@@ -276,16 +313,39 @@ CREATE TABLE `tbl_sanpham` (
 -- Đang đổ dữ liệu cho bảng `tbl_sanpham`
 --
 
-INSERT INTO `tbl_sanpham` (`sanpham_id`, `category_id`, `sanpham_name`, `sanpham_size`, `sanpham_color`, `sanpham_chitiet`, `sanpham_mota`, `sanpham_gia`, `sanpham_giakhuyenmai`, `sanpham_active`, `sanpham_hot`, `sanpham_soluong`, `sanpham_image`) VALUES
-(17, 2, 'GIÀY BÓNG ĐÁ WIKA HUNTER 2 TRẮNG', '', '', 'dasdasdasadasd', 'dasdasddsadasds', '500000', '350000', 0, 0, 10, 'giay3.jpg'),
-(18, 5, 'ÁO POLO DAS MÀU XANH DƯƠNG', '', '', 'Mềm và bền bỉ', 'Chất lượng tốt', '300000', '190000', 0, 0, 10, 'thethao2.jpg'),
-(19, 5, 'ÁO BODY ADIDAS MÃ A40', '', '', 'Vải mềm nhẹ nhàng', 'Chất lượng tốt', '200000', '120000', 0, 0, 5, 'thethao1.jpg'),
-(20, 4, 'QUẦN SHORT LACOSTE – MÃ Q29', '', '', 'dasdad', 'dasdas', '250000', '170000', 0, 0, 15, 'quan2.jpg'),
-(21, 4, 'QUẦN DÀI ADIDAS ỐNG SUÔNG – MÃ Q03', '', '', 'dasdad', 'dasdas', '290000', '190000', 0, 0, 10, 'quan1.jpg'),
-(22, 2, 'GIÀY BÓNG ĐÁ WIKA HUNTER 2 ĐEN', '', '', 'dasdad', 'dasdas', '500000', '350000', 0, 0, 5, 'giay2.jpg'),
-(23, 2, 'GIÀY BÓNG ĐÁ WIKA HUNTER 2 CAM', '', '', 'dasdaddasda', 'dasdasdasd', '500000', '350000', 0, 0, 10, 'giay1.jpg'),
-(26, 3, 'GIẦY THỂ THAO NAM CHẠY BỘ MÃ S12', '', '', 'dasdas', 'dsadas', '400000', '299000', 0, 0, 10, 'g3.jpg'),
-(27, 3, 'GIẦY CASUAL NAM THỜI TRANG MÃ S19', '', '', 'dasdas', 'dsadas', '500000', '390000', 0, 0, 10, 'g1.jpg');
+INSERT INTO `tbl_sanpham` (`sanpham_id`, `category_id`, `sanpham_name`, `sanpham_size`, `sanpham_color`, `sanpham_chitiet`, `sanpham_mota`, `sanpham_gia`, `sanpham_giakhuyenmai`, `sanpham_gift`, `sanpham_active`, `sanpham_hot`, `sanpham_soluong`, `sanpham_image`) VALUES
+(18, 5, 'ÁO BÓNG ĐÁ BIA VIỆT', 'L', '', 'Mềm và bền bỉ', 'Chất lượng tốt', '300000', '190000', '', 0, 0, 10, '6.png'),
+(19, 5, 'ÁO BÓNG ĐÁ BIA SÀI GÒN', 'XL', '', 'Vải mềm nhẹ nhàng', 'Chất lượng tốt', '200000', '120000', '', 0, 0, 5, '5.png'),
+(20, 4, 'Quần Dài Tập Luyện Nam Puma', 'XL', '', 'dasdad', 'dasdas', '250000', '170000', '', 0, 1, 15, 'q6.png'),
+(21, 4, 'Quần Short Lifestyle Nam Puma', 'XL', '', 'dasdad', 'dasdas', '290000', '190000', '', 0, 1, 10, 'q7.png'),
+(50, 5, 'ÁO BÓNG ĐÁ BIA HENIEKEN', 'L', '', '', '', '500000', '350000', '', 0, 0, 10, '7.png'),
+(51, 5, 'ÁO BÓNG ĐÁ BIA SAPORO', 'XL', '', '', '', '500000', '350000', '', 0, 0, 10, '8.png'),
+(52, 5, 'ÁO BÓNG ĐÁ BIA SƯ TỬ', 'XL', '', '', '', '500000', '350000', '', 0, 0, 10, '1.png'),
+(53, 5, 'ÁO BÓNG ĐÁ FIGER BIA', 'XL', '', '', '', '500000', '350000', '', 0, 0, 10, '2.png'),
+(54, 5, 'ÁO BÓNG ĐÁ BIA HÀ NỘI', 'XL', '', '', '', '500000', '350000', '', 0, 0, 0, '4.png'),
+(55, 4, 'Quần Dài Chạy Bộ Nam Nike', 'L', '', '', '', '500000', '190000', '', 0, 1, 15, 'q1.png'),
+(56, 4, 'Quần Dài Lifestyle Nam Nike', 'M', '', '', '', '1000000', '190000', '', 0, 1, 15, 'q2.png'),
+(57, 4, 'Quần Dài Lifestyle Nam Puma Iconic', 'XL', '', '', '', '1200000', '120000', '', 0, 1, 20, 'q4.png'),
+(60, 3, 'Nike Air Force 1 ID Gucci Rep 1:1', '39', '', '', '', '850000', '350000', '', 0, 0, 10, 'g2.png'),
+(61, 3, 'Nike Air Force 1 Athletic Club', '39', '', '', '', '850000', '350000', '', 0, 0, 10, 'g9.png'),
+(62, 3, 'Nike Air Force 1 Full Trắng REP 1:1', '39', '', '', '', '850000', '350000', '', 0, 0, 15, 'g4.png'),
+(63, 3, 'Nike Jordan 1 High Đen Trắng REP', '39', '', '', '', '850000', '350000', '', 0, 0, 20, 'g5.png'),
+(64, 3, 'Adidas 8681 Ghi Kẻ Trắng SF Rep 1:1', '40', '', '', '', '850000', '350000', '', 0, 0, 20, 'g6.png'),
+(65, 3, 'Giày MLB Mustard NY Da Lộn Kem', '40', '', '', '', '850000', '350000', '', 0, 0, 5, 'g7.png'),
+(66, 3, 'Nike Air Force 1 Xám Kem Đế Đen', '40', '', '', '', '850000', '350000', '', 0, 0, 10, 'g8.png'),
+(67, 3, 'Nike Air Force 1 Da Lộn Xám Navy Cam', '39', '', '', '', '850000', '350000', '', 0, 0, 10, 'g10.png'),
+(68, 2, 'Adidas X SPEEDPORTAL.1 TF - World Cup 2022', '39', '', '', '', '2500000', '350000', '', 0, 0, 15, 's1.png'),
+(69, 2, 'Mizuno Morelia Neo III Pro TF - Đen/Tr', '39', '', '', '', '2500000', '350000', '', 0, 0, 15, 's2.png'),
+(70, 2, 'Adidas Predator Edge.3 TF - Đỏ', '40', '', '', '', '2500000', '350000', '', 0, 0, 5, 's3.png'),
+(71, 2, 'Adidas X SPEEDPORTAL.3 TF - Xanh Cây', '39', '', '', '', '2500000', '350000', '', 0, 0, 10, 's4.png'),
+(72, 2, 'Nike Tiempo 9 Academy TF - Xanh Ngọc', '39', '', '', '', '2500000', '350000', '', 0, 0, 10, 's5.png'),
+(73, 2, 'Giày Đá Bóng Mizuno Monacirda Neo II Select Tf', '39', '', '', '', '2500000', '350000', '', 0, 0, 15, 's6.png'),
+(74, 2, 'Adidas Predator Edge.3 TF Bản Cổ Cao - World Cup', '39', '', '', '', '2500000', '350000', '', 0, 0, 20, 's7.png'),
+(75, 2, 'Nike Tiempo React 9 Pro TF - Trắng/Vàng - DA1192-', '39', '', '', '', '2500000', '350000', '', 0, 0, 15, 's8.png'),
+(76, 2, 'Adidas X SPEEDPORTAL.3 TF World Cup 2022', '39', '', '', '', '2500000', '350000', '', 0, 0, 15, 's1.png'),
+(81, 6, 'ÁO THIẾT KẾ MỚI', '39', '', '', '', '500000', '350000', 'Tặng Kèm: Nước Hoa', 0, 0, 0, '10.png'),
+(82, 6, 'ÁO POLO DAS MÀU XANH ', '39', '', '', '', '500000', '350000', 'Tặng Kèm: Nước Hoa', 0, 0, 0, '7.png'),
+(84, 6, 'Áo Gió', 'M', '', '', '', '500000', '125000', 'Tặng Kèm: Bàn Chải', 0, 0, 1, '6.png');
 
 -- --------------------------------------------------------
 
@@ -329,6 +389,12 @@ ALTER TABLE `tbl_baiviet`
 --
 ALTER TABLE `tbl_category`
   ADD PRIMARY KEY (`category_id`);
+
+--
+-- Chỉ mục cho bảng `tbl_comment`
+--
+ALTER TABLE `tbl_comment`
+  ADD PRIMARY KEY (`comment_id`);
 
 --
 -- Chỉ mục cho bảng `tbl_danhmuc_tin`
@@ -392,7 +458,13 @@ ALTER TABLE `tbl_baiviet`
 -- AUTO_INCREMENT cho bảng `tbl_category`
 --
 ALTER TABLE `tbl_category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_comment`
+--
+ALTER TABLE `tbl_comment`
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_danhmuc_tin`
@@ -404,19 +476,19 @@ ALTER TABLE `tbl_danhmuc_tin`
 -- AUTO_INCREMENT cho bảng `tbl_donhang`
 --
 ALTER TABLE `tbl_donhang`
-  MODIFY `donhang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `donhang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_giaodich`
 --
 ALTER TABLE `tbl_giaodich`
-  MODIFY `giaodich_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `giaodich_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_giohang`
 --
 ALTER TABLE `tbl_giohang`
-  MODIFY `giohang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `giohang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_khachhang`
@@ -428,7 +500,7 @@ ALTER TABLE `tbl_khachhang`
 -- AUTO_INCREMENT cho bảng `tbl_sanpham`
 --
 ALTER TABLE `tbl_sanpham`
-  MODIFY `sanpham_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `sanpham_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_slider`

@@ -39,26 +39,30 @@ include('../db/connect.php');
 			box-shadow: 5px 5px 5px -5px gray;
 		}
 		#form{
-			margin-left: 510px;
+			margin-left: 550px;
 		}
 		#taikhoan{
 			margin-top: 30px;
 			font-family: sans-serif;
 		}
 		#dangnhap{
-			margin-left: 140px;
+			margin-left: 170px;
 		}
 		#quaylai{
 			margin-left: 20px;
 		}
+		@font-face {
+    		font-family: "Pattaya-Regular";
+    		src: url(../Pattaya/Pattaya-Regular.ttf);
+		}
 	</style>
 </head>
 <body>
-	<h2 align="center">Đăng Nhập Admin</h2>
+	<h2 align="center" style="font-family: Pattaya-Regular">Đăng Nhập Admin</h2>
 	<div class="col-md-8">
-	<div class="form-group">
+	<div class="form-group" style="font-family: Pattaya-Regular">
 		<form action="" method="POST" id="form">
-		<label id="taikhoan">Tài Khoản</label>
+		<label id="taikhoan" style="font-family: Pattaya-Regular">Tài Khoản</label>
 		<input type="text" name="taikhoan" placeholder="Điền Email" class="form-control" required=""><br>
 		<label>Mật Khẩu</label>
 		<input type="password" name="matkhau" placeholder="Điền mật khẩu" class="form-control" required=""><br>

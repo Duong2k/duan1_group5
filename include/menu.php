@@ -33,7 +33,7 @@
 ?>
 <div class="navbar-inner">
 		<div class="container">
-			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<nav class="navbar navbar-expand-lg bg-light">
 				<div class="agileits-navi_search">
 					<div class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
 						<a class="nav-link dropdown-toggle" href="#" id="danhmuc">Danh Mục</a>
@@ -52,7 +52,7 @@
 				    aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-size: 14px">
 					<ul class="navbar-nav ml-auto text-center mr-xl-5">
 						<li class="nav-item active mr-lg-2 mb-lg-0 mb-2">
 							<a class="nav-link" href="index.php">Trang Chủ
@@ -92,7 +92,7 @@
 							</div>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="contact.html">Liên Hệ</a>
+							<a class="nav-link" href="contact.php">Liên Hệ</a>
 						</li>
 					</ul>
 				</div>

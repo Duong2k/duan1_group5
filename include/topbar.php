@@ -5,6 +5,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="../js/jquery.min.js"></script>
+	<style>
+		@font-face {
+    		font-family: "Pattaya-Regular";
+    		src: url(Pattaya/Pattaya-Regular.ttf);
+		}
+	</style>
 </head>
 <body>
 <?php
@@ -43,6 +49,7 @@
  		$_SESSION['dangnhap_home'] = $name;
 		$_SESSION['khachhang_id'] = $row_khachhang['khachhang_id'];
 		
+		echo '<script>alert("Tài khoản mật khẩu sai")</script>';
  		header('Location:index.php?quanly=giohang');
 	}
 ?> 
@@ -92,26 +99,26 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title text-center">Đăng nhập</h5>
+					<h5 class="modal-title text-center"  style="font-family: Pattaya-Regular">Đăng nhập</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body">
+				<div class="modal-body"  style="font-family: Pattaya-Regular">
 					<form action="#" method="post">
 						<div class="form-group">
 							<label class="col-form-label">Email</label>
 							<input type="text" class="form-control" placeholder=" " name="email_login" required="">
 						</div>
 						<div class="form-group">
-							<label class="col-form-label">Mật khẩu</label>
+							<label class="col-form-label">Password</label>
 							<input type="password" class="form-control" placeholder=" " name="password_login" required="">
 						</div>
 						<div class="right-w3l">
 							<input type="submit" class="form-control" name="dangnhap_home" value="Đăng nhập">
 						</div>
 						
-						<p class="text-center dont-do mt-3">Chưa có tài khoản?
+						<p class="text-center dont-do mt-3"  style="font-family: Pattaya-Regular">Chưa có tài khoản?
 							<a href="#" data-toggle="modal" data-target="#dangky">
 								Đăng ký</a>
 						</p>
@@ -126,12 +133,12 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title">Đăng ký</h5>
+					<h5 class="modal-title" style="font-family: Pattaya-Regular">Đăng ký</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body">
+				<div class="modal-body" style="font-family: Pattaya-Regular">
 					<form action="" method="post">
 						<div class="form-group">
 							<label class="col-form-label">Tên khách hàng</label>
@@ -177,21 +184,22 @@
 		<div class="container">
 			<div class="row header-bot_inner_wthreeinfo_header_mid">
 				<!-- logo -->
-				<div class="col-md-3 logo_agile">
+				<div class="col-md-3">
 					<h1 class="text-center">
 						<a href="index.php" class="font-weight-bold font-italic">
-							<img src="images/kingmen.png" alt=" " width="100px" class="img-fluid">KingMenSport
+							<img src="images/kingmen.png" alt=" " width="120px" height="100px" class="img-fluid" id="img">
 						</a>
 					</h1>
 				</div>
 				<!-- //logo -->
 				<!-- header-bot -->
 				<div class="col-md-9 header mt-4 mb-md-0 mb-4">
-					<div class="row">
+					<div class="row" style="margin-top: 10px">
 						<!-- search -->
 						<div class="col-10 agileits_search">
 							<form class="form-inline" action="index.php?quanly=timkiem" method="POST">
-								<input class="form-control mr-sm-2" name="search_product" type="search" placeholder="Tìm kiếm sản phẩm" aria-label="Search" required>
+								<input class="form-control mr-sm-2" name="search_product" type="search" 
+								placeholder="Tìm kiếm sản phẩm" aria-label="Search" required style="height: 46px">
 								<button class="btn my-2 my-sm-0" name="search_button" type="submit">Tìm kiếm</button>
 							</form>
 						</div>
