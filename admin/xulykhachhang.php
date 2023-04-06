@@ -1,17 +1,18 @@
 <?php
-	include('../db/connect.php');
+include('../db/connect.php');
 ?>
 
 <?php
-	if(isset($_GET['xoa'])){
-		$id= $_GET['xoa'];
-		$sql_xoa = mysqli_query($con,"DELETE FROM tbl_khachhang WHERE khachhang_id='$id'");
-	} 
+if (isset($_GET['xoa'])) {
+  $id = $_GET['xoa'];
+  $sql_xoa = mysqli_query($con, "DELETE FROM tbl_khachhang WHERE khachhang_id='$id'");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>Quản Trị Khách Hàng</title>
+  <title>Quản Trị Khách Hàng</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,8 +23,7 @@
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
   <!-- Font-icon css-->
-  <link rel="stylesheet" type="text/css"
-    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
@@ -32,8 +32,7 @@
 <body onload="time()" class="app sidebar-mini rtl">
   <!-- Navbar-->
   <header class="app-header">
-    <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar"
-      aria-label="Hide Sidebar"></a>
+    <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
     <!-- Navbar Right Menu-->
     <ul class="app-nav">
 
@@ -47,179 +46,164 @@
   <!-- Sidebar menu-->
   <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
   <aside class="app-sidebar">
-    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="../images/anh3.jpg" width="50px"
-        height= "70" alt="User Image">
+    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="../images/anh3.jpg" width="50px" height="70" alt="User Image">
       <div>
-        <p class="app-sidebar__user-name"><b>Văn Dương</b></p>
+        <p class="app-sidebar__user-name"><b>Dương</b></p>
         <p class="app-sidebar__user-designation">Chào mừng bạn trở lại</p>
       </div>
     </div>
     <hr>
     <ul class="app-menu">
-      <li><a class="app-menu__item haha" href="xulybieudo.php"><i class='app-menu__icon bx bx-tachometer'></i><span
-            class="app-menu__label">Bảng điều khiển</span></a></li>
+      <li><a class="app-menu__item haha" href="xulybieudo.php"><i class='app-menu__icon bx bx-tachometer'></i><span class="app-menu__label">Bảng điều khiển</span></a></li>
 
-      <li><a class="app-menu__item " href="xulynhanvien.php"><i class='app-menu__icon bx bx-id-card'></i> <span
-            class="app-menu__label">Quản lý nhân viên</span></a></li>
+      <li><a class="app-menu__item " href="xulynhanvien.php"><i class='app-menu__icon bx bx-id-card'></i> <span class="app-menu__label">Quản lý nhân viên</span></a></li>
 
-      <li><a class="app-menu__item" href="xulykhachhang.php"><i class='app-menu__icon bx bx-user-voice'></i><span
-            class="app-menu__label">Quản lý khách hàng</span></a></li>
+      <li><a class="app-menu__item" href="xulykhachhang.php"><i class='app-menu__icon bx bx-user-voice'></i><span class="app-menu__label">Quản lý khách hàng</span></a></li>
 
-      <li><a class="app-menu__item" href="xulysanpham.php"><i class='app-menu__icon bx bx-purchase-tag-alt'></i><span 
-            class="app-menu__label">Quản lý sản phẩm</span></a></li>
+      <li><a class="app-menu__item" href="xulysanpham.php"><i class='app-menu__icon bx bx-purchase-tag-alt'></i><span class="app-menu__label">Quản lý sản phẩm</span></a></li>
 
-      <li><a class="app-menu__item" href="xulydonhang.php"><i class='app-menu__icon bx bx-cart-alt'></i><span
-            class="app-menu__label">Quản lý đơn hàng</span></a></li>
+      <li><a class="app-menu__item" href="xulydonhang.php"><i class='app-menu__icon bx bx-cart-alt'></i><span class="app-menu__label">Quản lý đơn hàng</span></a></li>
 
-      <li><a class="app-menu__item" href="xulybinhluan.php"><i class='app-menu__icon bx bx-task'></i><span
-            class="app-menu__label">Quản lý bình luận</span></a></li>
+      <li><a class="app-menu__item" href="xulybinhluan.php"><i class='app-menu__icon bx bx-task'></i><span class="app-menu__label">Quản lý bình luận</span></a></li>
 
-      <li><a class="app-menu__item" href="xulydanhmuc.php"><i class='app-menu__icon bx bx-run'></i><span
-            class="app-menu__label">Quản lý danh mục
+      <li><a class="app-menu__item" href="xulydanhmuc.php"><i class='app-menu__icon bx bx-run'></i><span class="app-menu__label">Quản lý danh mục
           </span></a></li>
 
-      <li><a class="app-menu__item" href="xulydanhmucbaiviet.php"><i class='app-menu__icon bx bx-run'></i><span
-            class="app-menu__label">Quản lý danh mục bài viết
+      <li><a class="app-menu__item" href="xulydanhmucbaiviet.php"><i class='app-menu__icon bx bx-run'></i><span class="app-menu__label">Quản lý danh mục bài viết
           </span></a></li>
 
-      <li><a class="app-menu__item" href="xulybaiviet.php"><i class='app-menu__icon bx bx-run'></i><span
-            class="app-menu__label">Quản lý bài viết
+      <li><a class="app-menu__item" href="xulybaiviet.php"><i class='app-menu__icon bx bx-run'></i><span class="app-menu__label">Quản lý bài viết
           </span></a></li>
 
     </ul>
   </aside>
 
   <main class="app-content">
-      <div class="app-title">
-        <ul class="app-breadcrumb breadcrumb side">
-          <li class="breadcrumb-item active"><a href="#"><b>Danh sách sản phẩm</b></a></li>
-        </ul>
-        <div id="clock"></div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="tile">
-            <div class="tile-body">
-              <div class="row element-button">
-                <div class="col-sm-2">
-  
-                  <a class="btn btn-add btn-sm" href="form-add-don-hang.html" title="Thêm"><i class="fas fa-plus"></i>
-                    Tạo mới đơn hàng</a>
-                </div>
-                <div class="col-sm-2">
-                  <a class="btn btn-delete btn-sm nhap-tu-file" type="button" title="Nhập" onclick="myFunction(this)"><i
-                      class="fas fa-file-upload"></i> Tải từ file</a>
-                </div>
-  
-                <div class="col-sm-2">
-                  <a class="btn btn-delete btn-sm print-file" type="button" title="In" onclick="myApp.printTable()"><i
-                      class="fas fa-print"></i> In dữ liệu</a>
-                </div>
-                <div class="col-sm-2">
-                  <a class="btn btn-delete btn-sm print-file js-textareacopybtn" type="button" title="Sao chép"><i
-                      class="fas fa-copy"></i> Sao chép</a>
-                </div>
-  
-                <div class="col-sm-2">
-                  <a class="btn btn-excel btn-sm" href="" title="In"><i class="fas fa-file-excel"></i> Xuất Excel</a>
-                </div>
-                <div class="col-sm-2">
-                  <a class="btn btn-delete btn-sm pdf-file" type="button" title="In" onclick="myFunction(this)"><i
-                      class="fas fa-file-pdf"></i> Xuất PDF</a>
-                </div>
-                <div class="col-sm-2">
-                  <a class="btn btn-delete btn-sm" type="button" title="Xóa" onclick="myFunction(this)"><i
-                      class="fas fa-trash-alt"></i> Xóa tất cả </a>
-                </div>
+    <div class="app-title">
+      <ul class="app-breadcrumb breadcrumb side">
+        <li class="breadcrumb-item active"><a href="#"><b>Danh sách sản phẩm</b></a></li>
+      </ul>
+      <div id="clock"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tile">
+          <div class="tile-body">
+            <div class="row element-button">
+              <div class="col-sm-2">
+
+                <a class="btn btn-add btn-sm" href="form-add-don-hang.html" title="Thêm"><i class="fas fa-plus"></i>
+                  Tạo mới đơn hàng</a>
+              </div>
+              <div class="col-sm-2">
+                <a class="btn btn-delete btn-sm nhap-tu-file" type="button" title="Nhập" onclick="myFunction(this)"><i class="fas fa-file-upload"></i> Tải từ file</a>
               </div>
 
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<h4 style="margin-top: 20px">Khách Hàng</h4>
-				<?php
-				$sql_select_khachhang = mysqli_query($con,"SELECT * FROM tbl_khachhang,tbl_giaodich WHERE tbl_khachhang.khachhang_id=tbl_giaodich.khachhang_id GROUP BY tbl_giaodich.magiaodich ORDER BY tbl_khachhang.khachhang_id DESC"); 
-				?> 
-				<table class="table table-hover" border="0.5" style="margin-top: 20px">
-					<tr>
-						<th>Thứ tự</th>
-						<th>Tên khách hàng</th>
-						<th>Số điện thoại</th>
-						<th>Địa chỉ</th>
-						<th>Email</th>
-						<th>Ngày mua</th>
-						<th>Quản lý</th>
-					</tr>
-					<?php
-					$i = 0;
-					while($row_khachhang = mysqli_fetch_array($sql_select_khachhang)){ 
-						$i++;
-					?> 
-					<tr>
-						<td><?php echo $i; ?></td>
-						
-						<td><?php echo $row_khachhang['name']; ?></td>
-						<td><?php echo $row_khachhang['phone']; ?></td>
-						<td><?php echo $row_khachhang['address']; ?></td>
-						
-						<td><?php echo $row_khachhang['email'] ?></td>
-						<td><?php echo $row_khachhang['ngaythang'] ?></td>
-						<td>
-              <a href="?quanly=xemgiaodich&khachhang=<?php echo $row_khachhang['magiaodich'] ?>" class="btn btn-success btn-sm">Xem</a>
-              <a href="?xoa=<?php echo $row_khachhang['khachhang_id'] ?>" class="btn btn-danger">Xóa</a>
-            </td>
-					</tr>
-					 <?php
-					} 
-					?> 
-				</table>
-			</div>
+              <div class="col-sm-2">
+                <a class="btn btn-delete btn-sm print-file" type="button" title="In" onclick="myApp.printTable()"><i class="fas fa-print"></i> In dữ liệu</a>
+              </div>
+              <div class="col-sm-2">
+                <a class="btn btn-delete btn-sm print-file js-textareacopybtn" type="button" title="Sao chép"><i class="fas fa-copy"></i> Sao chép</a>
+              </div>
 
-			<div class="col-md-12">
-				<h4 style="margin-top: 30px">Liệt Kê Lịch Sử Đơn Hàng</h4>
-				<?php
-				if(isset($_GET['khachhang'])){
-					$magiaodich = $_GET['khachhang'];
-				}else{
-					$magiaodich = '';
-				}
-				$sql_select = mysqli_query($con,"SELECT * FROM tbl_giaodich,tbl_khachhang,tbl_sanpham WHERE tbl_giaodich.sanpham_id=tbl_sanpham.sanpham_id AND tbl_khachhang.khachhang_id=tbl_giaodich.khachhang_id AND tbl_giaodich.magiaodich='$magiaodich' ORDER BY tbl_giaodich.giaodich_id DESC"); 
-				?> 
-				<table class="table table-hover" border="0.5">
-					<tr>
-						<th>Thứ tự</th>
-						<th>Mã giao dịch</th>
-						<th>Tên sản phẩm</th>
-						<th>Ngày đặt</th>
-						
-					</tr>
-					<?php
-					$i = 0;
-					while($row_donhang = mysqli_fetch_array($sql_select)){ 
-						$i++;
-					?> 
-					<tr>
-						<td><?php echo $i; ?></td>
-						
-						<td><?php echo $row_donhang['magiaodich']; ?></td>
-					
-						<td><?php echo $row_donhang['sanpham_name']; ?></td>
-						
-						<td><?php echo $row_donhang['ngaythang'] ?></td>
-					
-					
-					</tr>
-					 <?php
-					} 
-					?> 
-				</table>
-			</div>
-		</div>
-	</div>
-</main>
-	
-<!-- Essential javascripts for application to work-->
-<script src="../js/jquery-3.2.1.min.js"></script>
+              <div class="col-sm-2">
+                <a class="btn btn-excel btn-sm" href="" title="In"><i class="fas fa-file-excel"></i> Xuất Excel</a>
+              </div>
+              <div class="col-sm-2">
+                <a class="btn btn-delete btn-sm pdf-file" type="button" title="In" onclick="myFunction(this)"><i class="fas fa-file-pdf"></i> Xuất PDF</a>
+              </div>
+              <div class="col-sm-2">
+                <a class="btn btn-delete btn-sm" type="button" title="Xóa" onclick="myFunction(this)"><i class="fas fa-trash-alt"></i> Xóa tất cả </a>
+              </div>
+            </div>
+
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <h4 style="margin-top: 20px">Khách Hàng</h4>
+                  <?php
+                  $sql_select_khachhang = mysqli_query($con, "SELECT * FROM tbl_khachhang,tbl_giaodich WHERE tbl_khachhang.khachhang_id=tbl_giaodich.khachhang_id GROUP BY tbl_giaodich.magiaodich ORDER BY tbl_khachhang.khachhang_id DESC");
+                  ?>
+                  <table class="table table-hover" border="0.5" style="margin-top: 20px">
+                    <tr>
+                      <th>Thứ tự</th>
+                      <th>Tên khách hàng</th>
+                      <th>Số điện thoại</th>
+                      <th>Địa chỉ</th>
+                      <th>Email</th>
+                      <th>Ngày mua</th>
+                      <th>Quản lý</th>
+                    </tr>
+                    <?php
+                    $i = 0;
+                    while ($row_khachhang = mysqli_fetch_array($sql_select_khachhang)) {
+                      $i++;
+                    ?>
+                      <tr>
+                        <td><?php echo $i; ?></td>
+
+                        <td><?php echo $row_khachhang['name']; ?></td>
+                        <td><?php echo $row_khachhang['phone']; ?></td>
+                        <td><?php echo $row_khachhang['address']; ?></td>
+
+                        <td><?php echo $row_khachhang['email'] ?></td>
+                        <td><?php echo $row_khachhang['ngaythang'] ?></td>
+                        <td>
+                          <a href="?quanly=xemgiaodich&khachhang=<?php echo $row_khachhang['magiaodich'] ?>" class="btn btn-success btn-sm">Xem</a>
+                          <a href="?xoa=<?php echo $row_khachhang['khachhang_id'] ?>" class="btn btn-danger">Xóa</a>
+                        </td>
+                      </tr>
+                    <?php
+                    }
+                    ?>
+                  </table>
+                </div>
+
+                <div class="col-md-12">
+                  <h4 style="margin-top: 30px">Liệt Kê Lịch Sử Đơn Hàng</h4>
+                  <?php
+                  if (isset($_GET['khachhang'])) {
+                    $magiaodich = $_GET['khachhang'];
+                  } else {
+                    $magiaodich = '';
+                  }
+                  $sql_select = mysqli_query($con, "SELECT * FROM tbl_giaodich,tbl_khachhang,tbl_sanpham WHERE tbl_giaodich.sanpham_id=tbl_sanpham.sanpham_id AND tbl_khachhang.khachhang_id=tbl_giaodich.khachhang_id AND tbl_giaodich.magiaodich='$magiaodich' ORDER BY tbl_giaodich.giaodich_id DESC");
+                  ?>
+                  <table class="table table-hover" border="0.5">
+                    <tr>
+                      <th>Thứ tự</th>
+                      <th>Mã giao dịch</th>
+                      <th>Tên sản phẩm</th>
+                      <th>Ngày đặt</th>
+
+                    </tr>
+                    <?php
+                    $i = 0;
+                    while ($row_donhang = mysqli_fetch_array($sql_select)) {
+                      $i++;
+                    ?>
+                      <tr>
+                        <td><?php echo $i; ?></td>
+
+                        <td><?php echo $row_donhang['magiaodich']; ?></td>
+
+                        <td><?php echo $row_donhang['sanpham_name']; ?></td>
+
+                        <td><?php echo $row_donhang['ngaythang'] ?></td>
+
+
+                      </tr>
+                    <?php
+                    }
+                    ?>
+                  </table>
+                </div>
+              </div>
+            </div>
+  </main>
+
+  <!-- Essential javascripts for application to work-->
+  <script src="../js/jquery-3.2.1.min.js"></script>
   <script src="../js/popper.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -232,31 +216,33 @@
   <!-- Data table plugin-->
   <script type="text/javascript" src="../js/jquery.dataTables.min.js"></script>
   <script type="text/javascript" src="../js/dataTables.bootstrap.min.js"></script>
-  <script type="text/javascript">$('#sampleTable').DataTable();</script>
+  <script type="text/javascript">
+    $('#sampleTable').DataTable();
+  </script>
   <script>
     function deleteRow(r) {
       var i = r.parentNode.parentNode.rowIndex;
       document.getElementById("myTable").deleteRow(i);
     }
-    jQuery(function () {
-      jQuery(".trash").click(function () {
+    jQuery(function() {
+      jQuery(".trash").click(function() {
         swal({
-          title: "Cảnh báo",
-         
-          text: "Bạn có chắc chắn là muốn xóa đơn hàng này?",
-          buttons: ["Hủy bỏ", "Đồng ý"],
-        })
+            title: "Cảnh báo",
+
+            text: "Bạn có chắc chắn là muốn xóa đơn hàng này?",
+            buttons: ["Hủy bỏ", "Đồng ý"],
+          })
           .then((willDelete) => {
             if (willDelete) {
               swal("Đã xóa thành công.!", {
-                
+
               });
             }
           });
       });
     });
     oTable = $('#sampleTable').dataTable();
-    $('#all').click(function (e) {
+    $('#all').click(function(e) {
       $('#sampleTable tbody :checkbox').prop('checked', $(this).is(':checked'));
       e.stopImmediatePropagation();
     });
@@ -314,8 +300,8 @@
       }
     }
     //In dữ liệu
-    var myApp = new function () {
-      this.printTable = function () {
+    var myApp = new function() {
+      this.printTable = function() {
         var tab = document.getElementById('sampleTable');
         var win = window.open('', '', 'height=700,width=700');
         win.document.write(tab.outerHTML);
@@ -342,10 +328,14 @@
 
 
     //Modal
-    $("#show-emp").on("click", function () {
-      $("#ModalUP").modal({ backdrop: false, keyboard: false })
+    $("#show-emp").on("click", function() {
+      $("#ModalUP").modal({
+        backdrop: false,
+        keyboard: false
+      })
     });
   </script>
 
 </body>
+
 </html>
