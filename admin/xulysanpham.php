@@ -169,7 +169,7 @@ if (isset($_GET['xoa'])) {
                   $id_category_1 = $row_capnhat['category_id'];
                 ?>
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <h4 style="margin-top: 20px">Cập Nhật Sản Phẩm</h4>
+                    <h4 style="margin-top: 20px">Cập nhật sản phẩm</h4>
 
                     <form action="" method="POST" enctype="multipart/form-data" style="margin-top: 30px">
                       <label>Tên sản phẩm</label>
