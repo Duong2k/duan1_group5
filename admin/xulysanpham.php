@@ -172,7 +172,7 @@ if (isset($_GET['xoa'])) {
                     <h4 style="margin-top: 20px">Cập nhật sản phẩm</h4>
 
                     <form action="" method="POST" enctype="multipart/form-data" style="margin-top: 30px">
-                      <label>Tên sản phẩm</label>
+                      <label>Tên sp</label>
                       <input type="text" class="form-control" name="tensanpham" value="<?php echo $row_capnhat['sanpham_name'] ?>"><br>
                       <input type="hidden" class="form-control" name="id_update" value="<?php echo $row_capnhat['sanpham_id'] ?>">
                       <label>Size</label><br>
