@@ -1,7 +1,7 @@
 <?php
-	session_start();
-	include_once('db/connect.php');
- ?>
+session_start();
+include_once('db/connect.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8" />
 	<script>
-		addEventListener("load", function () {
+		addEventListener("load", function() {
 			setTimeout(hideURLbar, 0);
 		}, false);
 
@@ -36,43 +36,42 @@
 
 	<!-- web fonts -->
 	<link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
-	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
-	    rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
 	<!-- //web fonts -->
 
 </head>
 
 <body>
 	<?php
-	include('include/topbar.php'); 
+	include('include/topbar.php');
 	include('include/menu.php');
 	include('include/slider.php');
 
-	if(isset($_GET['quanly'])){
+	if (isset($_GET['quanly'])) {
 		$tam = $_GET['quanly'];
-	}else{
+	} else {
 		$tam = '';
 	}
 
-	if($tam=='danhmuc'){
+	if ($tam == 'danhmuc') {
 		include('include/danhmuc.php');
-	}elseif($tam=='chitietsp'){
+	} elseif ($tam == 'chitietsp') {
 		include('include/chitietsp.php');
-	}elseif($tam=='giohang') {
+	} elseif ($tam == 'giohang') {
 		include('include/giohang.php');
-	}elseif ($tam=='timkiem') {
+	} elseif ($tam == 'timkiem') {
 		include('include/timkiem.php');
-	}elseif ($tam=='tintuc') {
+	} elseif ($tam == 'tintuc') {
 		include('include/tintuc.php');
-	}elseif ($tam=='chitiettin') {
+	} elseif ($tam == 'chitiettin') {
 		include('include/chitiettin.php');
-	}elseif ($tam=='xemdonhang') {
+	} elseif ($tam == 'xemdonhang') {
 		include('include/xemdonhang.php');
-	}else{
-		include('include/home.php'); 
+	} else {
+		include('include/home.php');
 	}
-	 
-	include('include/footer.php'); 
+
+	include('include/footer.php');
 	?>
 
 
@@ -82,13 +81,13 @@
 
 	<!-- nav smooth scroll -->
 	<script>
-		$(document).ready(function () {
+		$(document).ready(function() {
 			$(".dropdown").hover(
-				function () {
+				function() {
 					$('.dropdown-menu', this).stop(true, true).slideDown("fast");
 					$(this).toggleClass('open');
 				},
-				function () {
+				function() {
 					$('.dropdown-menu', this).stop(true, true).slideUp("fast");
 					$(this).toggleClass('open');
 				}
@@ -100,7 +99,7 @@
 	<!-- popup modal (for location)-->
 	<script src="js/jquery.magnific-popup.js"></script>
 	<script>
-		$(document).ready(function () {
+		$(document).ready(function() {
 			$('.popup-with-zoom-anim').magnificPopup({
 				type: 'inline',
 				fixedContentPos: false,
@@ -119,9 +118,9 @@
 
 	<!-- cart-js -->
 	<script>
-		paypals.minicarts.render(); 
+		paypals.minicarts.render();
 
-		paypals.minicarts.cart.on('checkout', function (evt) {
+		paypals.minicarts.cart.on('checkout', function(evt) {
 			var items = this.items(),
 				len = items.length,
 				total = 0,
@@ -140,7 +139,7 @@
 
 	<!-- password-script -->
 	<script>
-		window.onload = function () {
+		window.onload = function() {
 			document.getElementById("password1").onchange = validatePassword;
 			document.getElementById("password2").onchange = validatePassword;
 		}
@@ -152,7 +151,7 @@
 				document.getElementById("password2").setCustomValidity("Passwords Don't Match");
 			else
 				document.getElementById("password2").setCustomValidity('');
-			}
+		}
 	</script>
 
 	<!-- flexslider -->
@@ -160,7 +159,7 @@
 
 	<script src="js/jquery.flexslider.js"></script>
 	<script>
-		$(window).load(function () {
+		$(window).load(function() {
 			$('.flexslider').flexslider({
 				animation: "slide",
 				controlNav: "thumbnails"
@@ -168,7 +167,7 @@
 		});
 	</script>
 	<!-- //flexSlider-->
-	
+
 	<!-- scroll seller -->
 	<script src="js/scroll.js"></script>
 	<!-- //scroll seller -->
@@ -181,8 +180,8 @@
 	<script src="js/move-top.js"></script>
 	<script src="js/easing.js"></script>
 	<script>
-		jQuery(document).ready(function ($) {
-			$(".scroll").click(function (event) {
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event) {
 				event.preventDefault();
 
 				$('html,body').animate({
@@ -195,14 +194,14 @@
 
 	<!-- smooth-scrolling-of-move-up -->
 	<script>
-		$(document).ready(function () {
+		$(document).ready(function() {
 			$().UItoTop({
 				easingType: 'easeOutQuart'
 			});
 
 		});
 	</script>
-	<!-- //smooth-scrolling-of-move-up -->
+
 
 	<script src="js/bootstrap.js"></script>
 </body>
